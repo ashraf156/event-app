@@ -11,7 +11,7 @@ const Header = () => {
         <Link href="/">
           <img src="/assets/images/logo-1.png" alt="logo" className="h-10 w-auto" />
         </Link>
-        <nav className="md:flex-between hidden w-full max-w-xs mx-8">
+        <nav className="md:flex md:justify-between hidden w-full max-w-xs mx-8">
           <NavItems />
         </nav>
 

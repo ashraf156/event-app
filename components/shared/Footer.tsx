@@ -12,7 +12,8 @@ const Footer = () => {
           />
         </Link>
 
-        <p className="text-sm text-gray-500">2026 Event App. All Rights reserved.</p>
+        <p className="text-sm text-gray-500"> Event App. All Rights reserved to :Ashraf Hamed.</p>
+         <p className="text-sm text-gray-500">Mobile No:01223826043</p>
       </div>
     </footer>
   )
