@@ -1,4 +1,5 @@
 import { IEvent } from '@/lib/database/models/event.model'
+import { formatDateTime } from '@/lib/utils'
 import Link from 'next/link'
 
 type CardProps = {
@@ -27,7 +28,7 @@ const Card = ({ event, hidePrice }: CardProps) => {
         </div>
 
         <p className="text-[16px] font-medium text-gray-500">
-          {new Date(event.startDateTime).toLocaleString()}
+          {formatDateTime(event.startDateTime)}
         </p>
 
         <Link href={`/events/${event._id}`}>

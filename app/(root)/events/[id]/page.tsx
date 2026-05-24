@@ -1,4 +1,5 @@
 import { getEventById } from '@/lib/actions/event.actions'
+import { formatDateTime } from '@/lib/utils'
 import Image from 'next/image';
 
 type EventDetailsProps = {
@@ -55,10 +56,10 @@ const EventDetails = async ({ params }: EventDetailsProps) => {
               <div className="flex gap-2 md:gap-3">
                 <div className="flex flex-col text-lg font-medium text-gray-600">
                   <p>
-                    <span className="font-bold text-black">Starts:</span> {new Date(event.startDateTime).toLocaleString()}
+                    <span className="font-bold text-black">Starts:</span> {formatDateTime(event.startDateTime)}
                   </p>
                   <p>
-                    <span className="font-bold text-black">Ends:</span> {new Date(event.endDateTime).toLocaleString()}
+                    <span className="font-bold text-black">Ends:</span> {formatDateTime(event.endDateTime)}
                   </p>
                 </div>
               </div>

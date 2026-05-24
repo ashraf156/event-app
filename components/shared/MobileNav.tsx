@@ -1,3 +1,5 @@
+'use client'
+
 import {
   Sheet,
   SheetContent,
@@ -6,12 +8,22 @@ import {
 import { Separator } from "@/components/ui/separator"
 import NavItems from "./NavItems"
 import { Menu } from "lucide-react"
+import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 
 const MobileNav = () => {
+  const [open, setOpen] = useState(false)
+  const pathname = usePathname()
+
+  // Automatically close the sidebar when the route changes
+  useEffect(() => {
+    setOpen(false)
+  }, [pathname])
+
   return (
     <nav className="md:hidden">
-      <Sheet>
-        <SheetTrigger className="align-middle">
+      <Sheet open={open} onOpenChange={setOpen}>
+        <SheetTrigger className="align-middle" asChild>
           <Menu className="cursor-pointer" />
         </SheetTrigger>
         <SheetContent className="flex flex-col items-center gap-6 bg-white md:hidden">
